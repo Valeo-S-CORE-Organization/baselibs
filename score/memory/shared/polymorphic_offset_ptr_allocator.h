@@ -45,14 +45,19 @@ class PolymorphicOffsetPtrAllocator
 
     // Non-explicit constructor is good enough for maintaining required implicit conversion
     // NOLINTNEXTLINE(google-explicit-constructor): Tolerated, discard explicit.
-    PolymorphicOffsetPtrAllocator(const MemoryResourceProxy* const proxy) noexcept : proxy_{proxy} {}
+    PolymorphicOffsetPtrAllocator(const MemoryResourceProxy* const proxy) noexcept 
+        : proxy_{proxy}, alignment_{alignof(T)} {}
+
+    // NEW: Constructor with explicit alignment
+    PolymorphicOffsetPtrAllocator(const MemoryResourceProxy* const proxy, std::size_t alignment) noexcept 
+        : proxy_{proxy}, alignment_{std::max(alignment, alignof(T))} {}
 
     template <typename U>
     // Non-explicit constructor is good enough for maintaining required implicit conversion.
     // In addition semantically is a copy constructor.
     // NOLINTNEXTLINE(google-explicit-constructor): Tolerated, discard explicit.
     PolymorphicOffsetPtrAllocator(const PolymorphicOffsetPtrAllocator<U>& rhs) noexcept
-        : proxy_(rhs.getMemoryResourceProxy())
+        : proxy_(rhs.getMemoryResourceProxy()), alignment_{rhs.GetAlignment()}
     {
     }
 
@@ -65,8 +70,11 @@ class PolymorphicOffsetPtrAllocator
     void deallocate(pointer p, size_type size);
 
     OffsetPtr<const MemoryResourceProxy> getMemoryResourceProxy() const noexcept;
+    
+    // NEW: Getter for alignment (needed for copy ctor)
+    std::size_t GetAlignment() const noexcept { return alignment_; }
 
-    template <typename U>
+       template <typename U>
     friend bool operator==(const PolymorphicOffsetPtrAllocator<U>& lhs,
                            const PolymorphicOffsetPtrAllocator<U>& rhs) noexcept;
 
@@ -76,6 +84,7 @@ class PolymorphicOffsetPtrAllocator
 
   private:
     OffsetPtr<const MemoryResourceProxy> proxy_;
+    std::size_t alignment_{alignof(T)}; // Default to type alignment
 };
 
 template <typename T>
@@ -89,7 +98,7 @@ auto PolymorphicOffsetPtrAllocator<T>::allocate(size_type size) -> pointer
         // dereferenced.".
         // We check that proxy_ is not a nullptr in the previous line.
         // coverity[autosar_cpp14_a5_3_2_violation: FALSE]
-        allocatedMemory = proxy_->allocate(number_bytes_to_allocate, alignof(T));
+        allocatedMemory = proxy_->allocate(number_bytes_to_allocate, alignment_);
     }
     else
     {
