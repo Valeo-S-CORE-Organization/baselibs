@@ -32,17 +32,17 @@
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=4ae1632d" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/css/score.css?v=bb63a8e1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/score.css?v=415257cb" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/score_needs.css?v=82a1844f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/score_design.css?v=8048e6ee" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/libs/html/datatables.min.css?v=4b4fd840" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/needstable.css?v=5e1b6797" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/need_core.css?v=f5b60a78" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/modern.css?v=803738c0" />
   
   <!-- So that users can add custom icons -->
@@ -488,9 +488,53 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="requirements">
+  
+<style>
+.score-testcase-result {
+  font-weight: bold;
+}
+.score-testcase-result--passed {
+  color: #146c2e;
+}
+.score-testcase-result--failed {
+  color: #b42318;
+}
+.score-testcase-result--skipped {
+  color: #8a5300;
+}
+.score-testcase-result--disabled {
+  color: #5f6368;
+}
+html[data-theme="dark"] .score-testcase-result--passed {
+  color: #7ee787;
+}
+html[data-theme="dark"] .score-testcase-result--failed {
+  color: #ff7b72;
+}
+html[data-theme="dark"] .score-testcase-result--skipped {
+  color: #d29922;
+}
+html[data-theme="dark"] .score-testcase-result--disabled {
+  color: #c4cad2;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .score-testcase-result--passed {
+    color: #7ee787;
+  }
+  html:not([data-theme="light"]) .score-testcase-result--failed {
+    color: #ff7b72;
+  }
+  html:not([data-theme="light"]) .score-testcase-result--skipped {
+    color: #d29922;
+  }
+  html:not([data-theme="light"]) .score-testcase-result--disabled {
+    color: #c4cad2;
+  }
+}
+</style>
+<section id="requirements">
 <h1>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h1>
-<div class="need_container docutils container" id="SNCB-2ad80d28">
+<div class="need_container docutils container" id="SNCB-df08ed48">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_document table" id="doc__hash_requirements">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -534,7 +578,7 @@
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-52190257">
+<div class="need_container docutils container" id="SNCB-57472376">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp table" id="comp__baselibs_hash">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -581,7 +625,7 @@
 </div>
 <section id="functional-requirements">
 <h2>Functional Requirements<a class="headerlink" href="#functional-requirements" title="Link to this heading">#</a></h2>
-<div class="need_container docutils container" id="SNCB-ad79f3da">
+<div class="need_container docutils container" id="SNCB-89cd0f92">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp_req table" id="comp_req__hash__calculation_interface">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -601,6 +645,7 @@
 </tr>
 <tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
 <div class="line"><span><span><div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_testlink"><span class="needs_label">testlink: </span><span class="needs_data"><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L91">WorkingDigests/HashCalculatorFactoryCreationTest/0__CalculateSha256<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L109">WorkingDigests/HashCalculatorFactoryCreationTest/0__CalculateCrc32<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L91">WorkingDigests/HashCalculatorFactoryCreationTest/1__CalculateSha256<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L109">WorkingDigests/HashCalculatorFactoryCreationTest/1__CalculateCrc32<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L168">HashCalculatorFactory__HashCalculatorSpanInput<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L189">HashCalculatorFactory__HashCalculatorStreamInput<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L283">HashCalculatorFactory__HashCalculatorStreamInputWithMaxRead<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L240">HashCalculatorTest__UpdateStreamTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L271">HashCalculatorTest__InvalidDigestUpdateTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L293">HashCalculatorTest__UpdateFromStreamTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L312">HashCalculatorTest__InvalidUpdateFromStreamTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L335">HashCalculatorTest__UpdateFromStreamGoesBadTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L363">HashCalculatorTest__BadInputUpdateFromStreamTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L384">HashCalculatorTest__EmptyInputUpdateFromStreamTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L408">HashCalculatorTest__InvalidFinalizeTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L427">HashCalculatorSHATest__HashAlgorithmsSimpleTestSha256<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L67">OpensslLibTest__Sha256Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L101">OpensslLibTest__DigestCtxNewTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L111">OpensslLibTest__DigestInitExTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L123">OpensslLibTest__DigestUpdateTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L140">OpensslLibTest__DigestFinalExTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/crc/crc32_ieee_test.cpp#L48">Crc32IeeeTest__Hash<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/crc/crc32_ieee_test.cpp#L68">Crc32IeeeTest__TwoUpdates<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em></span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
 <div class="line"><span><div class="line">derived from: <span class="derived_from"><span><a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/baselibs/requirements/index.html#feat_req__baselibs__hash_library">feat_req__baselibs__hash_library</a></span></span></div>
@@ -628,7 +673,7 @@ and producing the final digest upon finalization.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-53748c42">
+<div class="need_container docutils container" id="SNCB-548bcfdf">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp_req table" id="comp_req__hash__value_retrieval_bytes">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -648,6 +693,7 @@ and producing the final digest upon finalization.</p></td>
 </tr>
 <tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
 <div class="line"><span><span><div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_testlink"><span class="needs_label">testlink: </span><span class="needs_data"><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/hash_test.cpp#L46">HashFixture__GetBytesAsSpan<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/hash_test.cpp#L95">HashTest__CanCreateFromValidStringCompleteSetOfAlgorithms<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/typed_hash_test.cpp#L44">TypedHashFixture__GetBytesAsSpan<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em></span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
 <div class="line"><span><div class="line">derived from: <span class="derived_from"><span><a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/baselibs/requirements/index.html#feat_req__baselibs__hash_library">feat_req__baselibs__hash_library</a></span></span></div>
@@ -673,7 +719,7 @@ and producing the final digest upon finalization.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-4b988627">
+<div class="need_container docutils container" id="SNCB-41630d18">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp_req table" id="comp_req__hash__value_retrieval_hex">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -693,6 +739,7 @@ and producing the final digest upon finalization.</p></td>
 </tr>
 <tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
 <div class="line"><span><span><div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_testlink"><span class="needs_label">testlink: </span><span class="needs_data"><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/hash_test.cpp#L59">HashTest__CanCreateFromValidString<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/hash_test.cpp#L83">HashTest__ToStringEmptyValueTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/hash_test.cpp#L95">HashTest__CanCreateFromValidStringCompleteSetOfAlgorithms<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/typed_hash_test.cpp#L57">TypedHashTest__CanCreateFromValidString<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/typed_hash_test.cpp#L84">TypedHashTest__ToStringEmptyValueTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/typed_hash_test.cpp#L96">TypedHashTest__CanSerializeToJsonAny<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em></span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
 <div class="line"><span><div class="line">derived from: <span class="derived_from"><span><a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/baselibs/requirements/index.html#feat_req__baselibs__hash_library">feat_req__baselibs__hash_library</a></span></span></div>
@@ -719,7 +766,7 @@ representation.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-c8d4dd18">
+<div class="need_container docutils container" id="SNCB-3cd5e875">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp_req table" id="comp_req__hash__factory_interface">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -739,6 +786,7 @@ representation.</p></td>
 </tr>
 <tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
 <div class="line"><span><span><div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_testlink"><span class="needs_label">testlink: </span><span class="needs_data"><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L38">WorkingDigests/HashCalculatorFactoryCreationTest/0__HashCalculatorFactorySuccessTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L38">WorkingDigests/HashCalculatorFactoryCreationTest/1__HashCalculatorFactorySuccessTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L154">HashCalculatorFactory__hashCalculatorFactoryFailTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L209">HashCalculatorFactory__FailedHashObjCreation<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L227">HashCalculatorFactory__FailedHashObjCreationStream<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L265">HashCalculatorFactory__FailHashObjCreationWithMaxRead<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L303">HashCalculatorFactory__InstantiateWithFailingOpenSslLib<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L320">HashCalculatorFactory__InstantiateWithSuccess<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L345">SafeHashCalculatorFactory__TryToInstantiateNonexistentHash<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em></span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
 <div class="line"><span><div class="line">derived from: <span class="derived_from"><span><a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/baselibs/requirements/index.html#feat_req__baselibs__hash_library">feat_req__baselibs__hash_library</a></span></span></div>
@@ -767,7 +815,7 @@ algorithm implementation.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-b0c36c52">
+<div class="need_container docutils container" id="SNCB-82547a49">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp_req table" id="comp_req__hash__sha_algorithms">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -787,6 +835,7 @@ algorithm implementation.</p></td>
 </tr>
 <tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
 <div class="line"><span><span><div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_testlink"><span class="needs_label">testlink: </span><span class="needs_data"><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L91">WorkingDigests/HashCalculatorFactoryCreationTest/0__CalculateSha256<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L91">WorkingDigests/HashCalculatorFactoryCreationTest/1__CalculateSha256<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L79">HashCalculatorTest__HashAlgorithmsSimpleSha1Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L102">HashCalculatorTest__HashAlgorithmsSimpleSha256Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L117">HashCalculatorTest__HashAlgorithmsSimpleSha384Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L140">HashCalculatorTest__HashAlgorithmsSimpleSha512Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L427">HashCalculatorSHATest__HashAlgorithmsSimpleTestSha256<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L55">OpensslLibTest__Sha1Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L77">OpensslLibTest__Sha384Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_wrapper/openssl_lib_impl_test.cpp#L89">OpensslLibTest__Sha512Test<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/common/algorithms_test.cpp#L123">HashIdentify__CorrectSizes<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em></span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
 <div class="line"><span><div class="line">derived from: <span class="derived_from"><span><a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/baselibs/requirements/index.html#feat_req__baselibs__hash_library">feat_req__baselibs__hash_library</a></span></span></div>
@@ -813,7 +862,7 @@ cryptographic hash algorithms.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-98f0977a">
+<div class="need_container docutils container" id="SNCB-98bf8fcf">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp_req table" id="comp_req__hash__crc32_algorithm">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -833,6 +882,7 @@ cryptographic hash algorithms.</p></td>
 </tr>
 <tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
 <div class="line"><span><span><div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_testlink"><span class="needs_label">testlink: </span><span class="needs_data"><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L109">WorkingDigests/HashCalculatorFactoryCreationTest/0__CalculateCrc32<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L127">WorkingDigests/HashCalculatorFactoryCreationTest/0__Crc32AutosarNotSupportedInIeeeVariant<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L109">WorkingDigests/HashCalculatorFactoryCreationTest/1__CalculateCrc32<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L127">WorkingDigests/HashCalculatorFactoryCreationTest/1__Crc32AutosarNotSupportedInIeeeVariant<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/crc/crc32_ieee_test.cpp#L48">Crc32IeeeTest__Hash<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/crc/crc32_ieee_test.cpp#L68">Crc32IeeeTest__TwoUpdates<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/common/algorithms_test.cpp#L123">HashIdentify__CorrectSizes<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em></span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
 <div class="line"><span><div class="line">derived from: <span class="derived_from"><span><a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/baselibs/requirements/index.html#feat_req__baselibs__hash_library">feat_req__baselibs__hash_library</a></span></span></div>
@@ -858,7 +908,7 @@ cryptographic hash algorithms.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-4be50ae2">
+<div class="need_container docutils container" id="SNCB-81b6bd10">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_comp_req table" id="comp_req__hash__safe_computation">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -878,6 +928,7 @@ cryptographic hash algorithms.</p></td>
 </tr>
 <tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
 <div class="line"><span><span><div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_testlink"><span class="needs_label">testlink: </span><span class="needs_data"><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L154">HashCalculatorFactory__hashCalculatorFactoryFailTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L209">HashCalculatorFactory__FailedHashObjCreation<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L227">HashCalculatorFactory__FailedHashObjCreationStream<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L265">HashCalculatorFactory__FailHashObjCreationWithMaxRead<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L303">HashCalculatorFactory__InstantiateWithFailingOpenSslLib<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/core/factory/impl/hash_calculator_factory_ieee_test.cpp#L345">SafeHashCalculatorFactory__TryToInstantiateNonexistentHash<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L172">HashCalculatorTest__NullDigestTypeCreateAlgoTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L187">HashCalculatorTest__InvalidDigestCtxCreateAlgoTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L204">HashCalculatorTest__InvalidDigestInitCreateAlgoTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em><a class="reference external" href="https://github.com/Valeo-S-CORE-Organization/baselibs/blob/987528c616d4c2732611bf68500ea49a1a533929/score/hash/code/openssl/openssl_hash_calculator_test.cpp#L222">HashCalculatorTest__InvalidCreateAlgorthimTest<span class="score-testcase-result score-testcase-result--passed"> (passed)</span></a><em>; </em></span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
 <div class="line"><span><div class="line">derived from: <span class="derived_from"><span><a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/baselibs/requirements/index.html#feat_req__baselibs__hash_library">feat_req__baselibs__hash_library</a></span></span></div>
@@ -963,7 +1014,7 @@ exception handling is not available.</p></td>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/Valeo-S-CORE-Organization/baselibs/edit/main/docs/baselibs/components/hash/requirements/indexash/docs/requirements/index.rst">
+    <a href="https://github.com/Valeo-S-CORE-Organization/baselibs/edit/main/score/hash/docs/requirements/index.rst">
       <i class="fa-solid fa-pencil"></i>
       
       
